@@ -1,0 +1,21 @@
+version: "3"
+services:
+  docker-react-primer:
+    build:
+      context: . # base of all paths
+      dockerfile: Dockerfile.dev # able to differentiate between Dockerfiles
+    ports:
+      - "3000:3000" # Map outside port to inside port
+    volumes:
+      - /app/node_modules # NO-COLON-SYNTAX: do not map path in container to anything outside, use what you already have/will create
+      - .:/app # WITH-COLON: map everything else in the container to the current context path outside.
+  # tests:
+  #   build:
+  #     context: . # base of all paths
+  #     dockerfile: Dockerfile.dev # able to differentiate between Dockerfiles
+  #   ports:
+  #     - "3000:3000" # Map outside port to inside port
+  #   volumes:
+  #     - /app/node_modules # NO-COLON-SYNTAX: do not map path in container to anything outside, use what you already have/will create
+  #     - .:/app # WITH-COLON: map everything else in the container to the current context path outside.
+  #   command: ["npm", "run", "test"]
