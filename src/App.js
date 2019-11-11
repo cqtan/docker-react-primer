@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Using Nginx?
+          New Feature!!!
         </a>
       </header>
     </div>
